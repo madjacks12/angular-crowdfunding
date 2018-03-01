@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Project } from '../project.model';
+import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-admin',
@@ -10,13 +12,22 @@ import { Project } from '../project.model';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private db: AngularFireDatabase) { }
   ngOnInit() {
   }
 
   submitForm(projectName: string, managerName: string, goal: number, productDescription: string, rewards: string) {
   var newProject: Project = new Project(projectName, managerName, goal, productDescription, rewards);
   this.projectService.addProjects(newProject);
+  }
+
+  featuredPhotoSelected(event: any) {
+    const file: File = event.target.files[0];
+
+    const metaData = {'contentType': file.type};
+    let name = file.name;
+    const storageRef: firebase.storage.Reference = firebase.storage().ref('/photos/' + name)
+    storageRef.put(file, metaData);
   }
 
 }
