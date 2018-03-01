@@ -1,0 +1,12 @@
+.card {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+.card-title {
+  padding: 10px;
+}
+.card-text {
+  padding: 10px;
+}

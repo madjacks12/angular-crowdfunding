@@ -2,3 +2,15 @@
 background-color: rgba(0, 175, 223, 0.2);
 
 }
+
+.card {
+  margin-bottom: 50px;
+  width: 500px;
+}
+
+.card-title {
+  padding: 10px;
+}
+.card-text {
+  padding: 10px;
+}

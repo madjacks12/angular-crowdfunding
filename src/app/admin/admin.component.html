@@ -11,6 +11,10 @@
           <input class="form-control" #newProjectName>
         </div>
         <div>
+          <label>Product Image:</label>
+          <input type="file" (change)="featuredPhotoSelected($event)">
+        </div>
+        <div>
           <label>Manager/Company Name:</label>
           <br>
           <input class="form-control" #newManagerName>
@@ -38,6 +42,9 @@
     </div>
   </div>
 </form>
-<!-- <div>
+<div class="edit-title">
+  <h1 class="text-info">Edit Projects:</h1>
+</div>
+<div>
   <app-home></app-home>
-</div> -->
+</div>

@@ -2,14 +2,16 @@
 <br>
 <div class="container">
   <div class="card">
-    <h2 class="card-header">{{(projectToDisplay | async)?.projectName}}</h2>
+    <h2 class="card-header text-primary">{{(projectToDisplay | async)?.projectName}}</h2>
     <div class="card-block">
-      <h3 class="card-title">from {{(projectToDisplay | async)?.managerName}}</h3>
+      <h3 class="card-title">from: {{(projectToDisplay | async)?.managerName}}</h3>
+      <h5 class="card-title">Description:</h5>
       <p class="card-text">{{(projectToDisplay | async)?.productDescription}}</p>
+      <h5 class="card-title">Rewards:</h5>
       <p class="card-text">{{(projectToDisplay | async)?.rewards}}</p>
     </div>
-    <div class="card-footer" text-muted>
-      <h4>Goal: {{(projectToDisplay | async)?.Goal}}</h4>
+    <div class="card-footer text-success" text-muted>
+      <h4>Goal: &#36;{{(projectToDisplay | async)?.goal}}</h4>
     </div>
   </div>
 </div>
