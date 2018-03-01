@@ -1,0 +1,23 @@
+form {
+  background-color: #e8e8e8;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 200px;
+  width: 570px;
+  align: "center";
+
+}
+
+input {
+  width: 250px;
+}
+
+
+textarea {
+  width: 500px;
+}
+
+button {
+  margin-top: 15px;
+
+}

@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1 class="display-3">Crowdfunding Marketplace</h1>
+  <p class="lead">Create passion projects and invest in your favorites. View current projects now.</p>
+  <hr class="my-4">
+  <p align="center"><strong>Jun doesn't even know how to code.</strong></p>
+</div>
+
+<div *ngFor="let project of projects | async" class="card">
+  <div class="card-header">
+    <h1>{{project.projectName}}</h1>
+  </div>
+  <div class="card-title">
+    <h3 (click)="goToDetailPage(project)">by {{project.goal}}</h3>
+    <button class="btn btn-primary"  (click)="goToDetailPage(project)">Check it out!</button>
+  </div>
+  <div *ngIf="currentRoute === '/admin'">
+      {{project.description}}
+      <hr>
+      <!-- <app-edit-project [selectedProject]="project"></app-edit-project> -->
+  </div>
+</div>
