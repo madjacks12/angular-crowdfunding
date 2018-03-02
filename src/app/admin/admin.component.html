@@ -12,20 +12,18 @@
         </div>
         <div>
           <label>Product Image:</label>
-          <input type="file" (change)="featuredPhotoSelected($event)">
+          <input type="file" (change)="featuredPhotoSelected($event)" #newImage>
         </div>
         <div>
           <label>Manager/Company Name:</label>
           <br>
           <input class="form-control" #newManagerName>
         </div>
-
         <div>
           <label>Fundraising Goal:</label>
           <br>
           <input class="form-control" #newGoal>
         </div>
-
         <div>
           <label>Product Description:</label>
           <br>
@@ -37,7 +35,6 @@
           <textarea class="form-control" #newRewards></textarea>
         </div>
         <button class="btn btn-primary"(click)="submitForm(newProjectName.value, newManagerName.value, newGoal.value, newDescription.value, newRewards.value); newProjectName.value=''; newManagerName.value=''; newGoal.value=''; newRewards.value=''">Add</button>
-
       </div>
     </div>
   </div>

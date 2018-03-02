@@ -16,10 +16,6 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitForm(projectName: string, managerName: string, goal: number, productDescription: string, rewards: string) {
-  var newProject: Project = new Project(projectName, managerName, goal, productDescription, rewards);
-  this.projectService.addProjects(newProject);
-  }
 
   featuredPhotoSelected(event: any) {
     const file: File = event.target.files[0];
@@ -27,7 +23,16 @@ export class AdminComponent implements OnInit {
     const metaData = {'contentType': file.type};
     let name = file.name;
     const storageRef: firebase.storage.Reference = firebase.storage().ref('/photos/' + name)
-    storageRef.put(file, metaData);
-  }
+    const uploadTask: firebase.storage.UploadTask = storageRef.put(file, metaData);
 
+    uploadTask.then((uploadSnapshot: firebase.storage.UploadTaskSnapshot) => {
+      firebase.database().ref('/photos/urls/').push(uploadSnapshot.downloadURL);
+    })
+   }
+
+
+  submitForm(projectName: string, managerName: string, goal: number, productDescription: string, rewards: string) {
+    var newProject: Project = new Project(projectName, managerName, goal, productDescription, rewards);
+    this.projectService.addProjects(newProject);
+  }
 }
