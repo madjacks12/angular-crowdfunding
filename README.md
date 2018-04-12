@@ -1,6 +1,6 @@
 # Crowdfunding
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+This project gives users full CRUD functionality to add delete and edit crowdfunding projects. 
 
 ## Development server
 
@@ -14,14 +14,18 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## API Instructions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In order to use this project you must obtain an API Key from Firebase available [here](https://firebase.google.com/). Once you have your key, replace it in the designated area in the API-key.ts file in the app folder of this project.
 
-## Running end-to-end tests
+## Technologies Used
+* Angular
+* Gulp
+* npm
+* Firebase
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Bugs
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The image upload button is currently broken when creating a new crowdfunding project.
+
